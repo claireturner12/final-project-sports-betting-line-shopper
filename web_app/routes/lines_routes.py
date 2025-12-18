@@ -16,7 +16,7 @@ def lines_form():
     return render_template("lines_form.html", sports = sports)
 
 # /lines/dashboard?sport=americanfootball_nfl
-@lines_routes.route("/lines/dashboard", methods=["GET", "POST"])
+@lines_routes.route("/lines", methods=["GET", "POST"])
 def lines_dashboard():
     print("LINES DASHBOARD...")
 
@@ -47,25 +47,3 @@ def lines_dashboard():
 
         flash("Odds Data Error. Please try again!", "danger")
         return redirect("/lines/form")
-
-#
-# API ROUTES
-#
-
-# /api/stocks.json?symbol=SPOT
-'''@lines_routes.route("/api/stocks.json")
-def stocks_api():
-    print("STOCKS DATA (API)...")
-
-    # for data supplied via GET request, url params are in request.args:
-    url_params = dict(request.args)
-    print("URL PARAMS:", url_params)
-    symbol = url_params.get("symbol") or "NFLX"
-
-    try:
-        df = fetch_stocks_csv(symbol=symbol)
-        data = df.to_dict("records")
-        return {"symbol": symbol, "data": data }
-    except Exception as err:
-        print('OOPS', err)
-        return {"message":"Market Data Error. Please try again."}, 404'''
