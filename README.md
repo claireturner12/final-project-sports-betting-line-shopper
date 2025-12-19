@@ -5,8 +5,22 @@ This final project allows you to shop for the best sports betting lines using th
 - THE_ODDS_API is saved in the .env file
 
 # Setup 
+## Virtual Environment Setup
+Create and activate a Conda virtual environment:
+
+```bash
+conda create -n betting-env python=3.11
+conda activate betting-en
+```
+
 ## Clone repo and download it from github. Navigate to repo from commandline: here's an example
 cd ~/Users/alexanderbotticelli/Documents/GitHub
+
+## Install Dependencies
+
+```bash
+pip install -r requirements.txt
+```
 
 # Testing
 pytest
